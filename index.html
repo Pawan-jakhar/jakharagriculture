@@ -7,7 +7,7 @@
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
     
-    /* Background setup throughout the site */
+    /* Pura Background Setup */
     body { 
       background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.55)), url('farmer-bg.png.jpg') no-repeat center center fixed; 
       background-size: cover;
@@ -29,7 +29,7 @@
     }
     .topbar a { color: #68d391; text-decoration: none; margin-left: 0.5rem; }
 
-    /* Header & Nav */
+    /* Header */
     header { 
       background: rgba(0, 0, 0, 0.5); 
       backdrop-filter: blur(5px);
@@ -44,28 +44,82 @@
     .domain-tag { font-size: 0.85rem; background: rgba(255,255,255,0.2); padding: 3px 8px; border-radius: 4px; display: inline-block; margin-top: 4px; }
 
     /* Hero Section */
-    .hero { text-align: center; padding: 5rem 1.5rem 3rem 1.5rem; }
-    .hero h1 { font-size: 2.6rem; margin-bottom: 0.8rem; font-weight: 800; text-shadow: 3px 3px 6px rgba(0,0,0,0.8); }
+    .hero { text-align: center; padding: 4.5rem 1.5rem 2.5rem 1.5rem; }
+    .hero h1 { font-size: 2.5rem; margin-bottom: 0.8rem; font-weight: 800; text-shadow: 3px 3px 6px rgba(0,0,0,0.8); }
     .hero p { font-size: 1.2rem; max-width: 700px; margin: auto; text-shadow: 2px 2px 4px rgba(0,0,0,0.8); font-weight: 500; }
 
-    /* Content Area */
+    /* Container */
     .container { max-width: 1100px; margin: auto; padding: 2rem 1.5rem; }
     .section-title { text-align: center; margin-bottom: 2.5rem; color: #ffffff; font-size: 2rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.8); }
 
-    /* Grid Cards with Translucent design to show background */
+    /* Clickable Cards */
     .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
     .card { 
       background: rgba(255, 255, 255, 0.95); 
       color: #2d3748;
-      padding: 2.2rem; 
+      padding: 2rem; 
       border-radius: 12px; 
       box-shadow: 0 8px 30px rgba(0,0,0,0.3); 
       border-top: 5px solid #2f855a; 
-      transition: transform 0.3s ease;
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-    .card:hover { transform: translateY(-5px); }
-    .card h3 { color: #1c4532; margin-bottom: 0.8rem; font-size: 1.35rem; }
-    .card p { color: #4a5568; font-size: 0.98rem; }
+    .card:hover { transform: translateY(-5px); box-shadow: 0 12px 35px rgba(0,0,0,0.4); }
+    .card h3 { color: #1c4532; margin-bottom: 0.8rem; font-size: 1.3rem; }
+    .card p { color: #4a5568; font-size: 0.95rem; }
+    .card-btn {
+      display: inline-block;
+      margin-top: 1.2rem;
+      padding: 0.5rem 1rem;
+      background: #2f855a;
+      color: white;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    /* Modal Popup Box */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(5px);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+      padding: 1.5rem;
+    }
+    .modal-box {
+      background: #ffffff;
+      color: #2d3748;
+      max-width: 520px;
+      width: 100%;
+      border-radius: 14px;
+      padding: 2.2rem;
+      position: relative;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+      animation: popIn 0.25s ease-out;
+    }
+    @keyframes popIn {
+      from { opacity: 0; transform: scale(0.95); }
+      to { opacity: 1; transform: scale(1); }
+    }
+    .close-btn {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-size: 2rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #718096;
+      line-height: 1;
+    }
+    .close-btn:hover { color: #e53e3e; }
+    .modal-box h3 { color: #22543d; margin-bottom: 0.8rem; font-size: 1.35rem; }
+    .modal-box ul { margin: 1rem 0 1.5rem 1.2rem; color: #4a5568; }
+    .modal-box li { margin-bottom: 0.5rem; }
 
     /* Contact Box */
     .contact-box { 
@@ -80,13 +134,11 @@
       box-shadow: 0 10px 30px rgba(0,0,0,0.5); 
       border: 1px solid rgba(255, 255, 255, 0.1);
     }
-    .contact-links { margin-top: 1.2rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
-    .btn { display: inline-block; padding: 0.9rem 2rem; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1.05rem; transition: transform 0.2s; }
-    .btn:hover { transform: scale(1.05); }
+    .btn { display: inline-block; padding: 0.9rem 2rem; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1.05rem; }
     .btn-whatsapp { background-color: #25d366; color: white; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4); }
 
     /* Footer */
-    footer { text-align: center; padding: 2rem 1rem; background: rgba(0, 0, 0, 0.8); color: #a0aec0; font-size: 0.9rem; margin-top: 4rem; border-top: 1px solid rgba(255, 255, 255, 0.10); }
+    footer { text-align: center; padding: 2rem 1rem; background: rgba(0, 0, 0, 0.85); color: #a0aec0; font-size: 0.9rem; margin-top: 4rem; border-top: 1px solid rgba(255, 255, 255, 0.1); }
     footer a { color: #48bb78; text-decoration: none; }
   </style>
 </head>
@@ -94,7 +146,7 @@
 
   <!-- Topbar -->
   <div class="topbar">
-    <div>आधिकारिक पोर्टल: <strong>www.jakharagriculture.com</strong></div>
+    <div>पोर्टल: <strong>jakharagriculture</strong></div>
     <div>संपर्क ईमेल: <a href="mailto:info@jakharagriculture.com">info@jakharagriculture.com</a></div>
   </div>
 
@@ -110,7 +162,7 @@
 
   <!-- Hero Section -->
   <section class="hero">
-    <h1>jakharagriculture.com पर आपका स्वागत है</h1>
+    <h1>Jakhar Agriculture में आपका स्वागत है</h1>
     <p>उन्नत कृषि यंत्र, कल्टीवेशन सेवाएं एवं आधुनिक खेती के संपूर्ण समाधान</p>
   </section>
 
@@ -119,29 +171,36 @@
     <h2 class="section-title">हमारी मुख्य सेवाएं एवं उत्पाद</h2>
     
     <div class="services-grid">
-      <div class="card">
+      <!-- Card 1 -->
+      <div class="card" onclick="openModal('machinery')">
         <h3>🚜 आधुनिक कृषि उपकरण</h3>
         <p>उच्च क्षमता वाले ट्रैक्टर, रोटावेटर एवं कल्टीवेटर की उपलब्धता और कुशल फील्ड सर्विस।</p>
+        <span class="card-btn">विवरण देखें &rarr;</span>
       </div>
 
-      <div class="card">
+      <!-- Card 2 -->
+      <div class="card" onclick="openModal('seeds')">
         <h3>🌾 उत्तम बीज एवं फसल परामर्श</h3>
         <p>बेहतर पैदावार के लिए प्रमाणित बीज, उचित उर्वरक एवं मिट्टी की जरूरत अनुसार सटीक सलाह।</p>
+        <span class="card-btn">विवरण देखें &rarr;</span>
       </div>
 
-      <div class="card">
+      <!-- Card 3 -->
+      <div class="card" onclick="openModal('repair')">
         <h3>🛠️ सर्विस एवं स्पेयर पार्ट्स</h3>
         <p>कृषि यंत्रों की तकनीकी मरम्मत, ओरिजिनल स्पेयर पार्ट्स और समय पर मेंटेनेंस सहायता।</p>
+        <span class="card-btn">विवरण देखें &rarr;</span>
       </div>
     </div>
 
-    <!-- Contact & Action Section -->
+    <!-- Contact Section -->
     <div class="contact-box">
       <h2 style="color: #48bb78; margin-bottom: 0.5rem;">हमसे संपर्क करें</h2>
       <p>किसी भी उपकरण, बुकिंग या कृषि सेवा के लिए सीधे संपर्क करें:</p>
       
-      <div class="contact-links">
-        <a href="https://wa.me/919996509973?text=Namaste,%20mujhe%20jakharagriculture.com%20se%20jaankari%20chahiye." target="_blank" class="btn btn-whatsapp">
+      <div style="margin-top: 1.2rem;">
+        <!-- Apna WhatsApp number 91XXXXXXXXXX ki jagah dalein -->
+        <a href="https://wa.me/919999999999?text=Namaste,%20mujhe%20jakharagriculture%20se%20jaankari%20chahiye." target="_blank" class="btn btn-whatsapp">
           💬 WhatsApp पर बात करें
         </a>
       </div>
@@ -150,8 +209,80 @@
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2026 <strong>jakharagriculture.com</strong>. सर्वाधिकार सुरक्षित।</p>
+    <p>&copy; 2026 <strong>Jakhar Agriculture</strong>. सर्वाधिकार सुरक्षित।</p>
   </footer>
+
+  <!-- Modal Screen -->
+  <div id="infoModal" class="modal-overlay" onclick="closeModalOnOutsideClick(event)">
+    <div class="modal-box">
+      <button class="close-btn" onclick="closeModal()">&times;</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+  <!-- Script for Popup -->
+  <script>
+    const serviceDetails = {
+      machinery: {
+        title: "🚜 आधुनिक कृषि उपकरण व मशीनरी",
+        desc: "हमारे पास उन्नत और आधुनिक कृषि मशीनें उचित दर पर उपलब्ध हैं:",
+        points: [
+          "उच्च क्षमता वाले ट्रैक्टर एवं कल्टीवेशन सेवाएं",
+          "रोटावेटर, डिस्क हैरो और लेजर लैंड लेवलर",
+          "समय पर फील्ड सर्विस और अनुभवी ऑपरेटर सुविधा"
+        ],
+        msg: "Tractor%20aur%20Machinery%20ki%20booking%20ki%20jaankari%20chahiye"
+      },
+      seeds: {
+        title: "🌾 उत्तम बीज एवं फसल समाधान",
+        desc: "फसल की पैदावार बढ़ाने के लिए प्रमाणित सामग्री एवं विशेषज्ञ सलाह:",
+        points: [
+          "उच्च गुणवत्ता वाले प्रमाणित बीज",
+          "संतुलित खाद, स्प्रे एवं कीटनाशक सुरक्षा",
+          "मिट्टी की प्रकृति अनुसार उचित फसल मार्गदर्शन"
+        ],
+        msg: "Beej%20aur%20Fasal%20se%20sambandhit%20jaankari%20chahiye"
+      },
+      repair: {
+        title: "🛠️ रिपेयरिंग एवं जेन्युइन स्पेयर पार्ट्स",
+        desc: "कृषि यंत्रों की त्वरित मरम्मत एवं देखभाल:",
+        points: [
+          "अनुभवी मैकेनिक द्वारा ऑन-साइट व वर्कशॉप मरम्मत",
+          "मूल एवं टिकाऊ स्पेयर पार्ट्स",
+          "सीजन में तुरंत इमरजेंसी रिपेयरिंग सहायता"
+        ],
+        msg: "Machinery%20repair%20aur%20parts%20ki%20jaankari%20chahiye"
+      }
+    };
+
+    function openModal(serviceKey) {
+      const data = serviceDetails[serviceKey];
+      const content = document.getElementById("modalContent");
+      
+      let pointsHtml = data.points.map(pt => `<li>${pt}</li>`).join('');
+      
+      content.innerHTML = `
+        <h3>${data.title}</h3>
+        <p>${data.desc}</p>
+        <ul>${pointsHtml}</ul>
+        <a href="https://wa.me/919996509973?text=Namaste,%20${data.msg}" target="_blank" class="btn btn-whatsapp" style="display:block; text-align:center; margin-top:1.5rem;">
+          💬 WhatsApp पर पूछें
+        </a>
+      `;
+      
+      document.getElementById("infoModal").style.display = "flex";
+    }
+
+    function closeModal() {
+      document.getElementById("infoModal").style.display = "none";
+    }
+
+    function closeModalOnOutsideClick(event) {
+      if (event.target.id === "infoModal") {
+        closeModal();
+      }
+    }
+  </script>
 
 </body>
 </html>

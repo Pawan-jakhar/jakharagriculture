@@ -1,15 +1,14 @@
-<!DOCTYPE html>
+   <!DOCTYPE html>
 <html lang="hi">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jakhar Agriculture | आधुनिक कृषि सेवाएं एवं उपकरण</title>
+  <title>Jakhar Agriculture | हमारा खेत एवं लेजर लैंड लेवलर सेवाएं</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
     
-    /* Pura Background Setup */
     body { 
-      background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.55)), url('farmer-bg.png.jpg') no-repeat center center fixed; 
+      background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.6)), url('farmer-bg.png.jpg') no-repeat center center fixed; 
       background-size: cover;
       color: #ffffff; 
       line-height: 1.6; 
@@ -18,97 +17,105 @@
     
     /* Top Bar */
     .topbar { 
-      background: rgba(0, 0, 0, 0.7); 
+      background: rgba(0, 0, 0, 0.75); 
       color: #e2e8f0; 
       padding: 0.6rem 1.5rem; 
       font-size: 0.9rem; 
       display: flex; 
       justify-content: space-between; 
       flex-wrap: wrap; 
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
     }
     .topbar a { color: #68d391; text-decoration: none; margin-left: 0.5rem; }
 
     /* Header */
     header { 
-      background: rgba(0, 0, 0, 0.5); 
-      backdrop-filter: blur(5px);
-      -webkit-backdrop-filter: blur(5px);
+      background: rgba(0, 0, 0, 0.55); 
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
       color: white; 
       padding: 1.5rem; 
-      box-shadow: 0 2px 15px rgba(0,0,0,0.3); 
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4); 
     }
     .nav-container { max-width: 1100px; margin: auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
-    .logo { font-size: 1.8rem; font-weight: bold; text-shadow: 2px 2px 4px rgba(0,0,0,0.6); }
+    .logo { font-size: 1.8rem; font-weight: bold; text-shadow: 2px 2px 4px rgba(0,0,0,0.7); }
     .logo span { color: #48bb78; }
     .domain-tag { font-size: 0.85rem; background: rgba(255,255,255,0.2); padding: 3px 8px; border-radius: 4px; display: inline-block; margin-top: 4px; }
 
     /* Hero Section */
-    .hero { text-align: center; padding: 4.5rem 1.5rem 2.5rem 1.5rem; }
-    .hero h1 { font-size: 2.5rem; margin-bottom: 0.8rem; font-weight: 800; text-shadow: 3px 3px 6px rgba(0,0,0,0.8); }
-    .hero p { font-size: 1.2rem; max-width: 700px; margin: auto; text-shadow: 2px 2px 4px rgba(0,0,0,0.8); font-weight: 500; }
+    .hero { text-align: center; padding: 4rem 1.5rem 2.5rem 1.5rem; }
+    .hero h1 { font-size: 2.5rem; margin-bottom: 0.8rem; font-weight: 800; text-shadow: 3px 3px 8px rgba(0,0,0,0.8); }
+    .hero p { font-size: 1.2rem; max-width: 750px; margin: auto; text-shadow: 2px 2px 4px rgba(0,0,0,0.8); font-weight: 500; }
 
     /* Container */
     .container { max-width: 1100px; margin: auto; padding: 2rem 1.5rem; }
-    .section-title { text-align: center; margin-bottom: 2.5rem; color: #ffffff; font-size: 2rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.8); }
+    .section-title { text-align: center; margin-bottom: 2.5rem; color: #ffffff; font-size: 2rem; text-shadow: 2px 2px 5px rgba(0,0,0,0.8); }
 
-    /* Clickable Cards */
-    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+    /* Cards Grid */
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.8rem; }
     .card { 
-      background: rgba(255, 255, 255, 0.95); 
+      background: rgba(255, 255, 255, 0.96); 
       color: #2d3748;
-      padding: 2rem; 
-      border-radius: 12px; 
-      box-shadow: 0 8px 30px rgba(0,0,0,0.3); 
-      border-top: 5px solid #2f855a; 
+      padding: 2.2rem; 
+      border-radius: 14px; 
+      box-shadow: 0 8px 30px rgba(0,0,0,0.35); 
+      border-top: 6px solid #2f855a; 
       cursor: pointer;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
     }
-    .card:hover { transform: translateY(-5px); box-shadow: 0 12px 35px rgba(0,0,0,0.4); }
-    .card h3 { color: #1c4532; margin-bottom: 0.8rem; font-size: 1.3rem; }
-    .card p { color: #4a5568; font-size: 0.95rem; }
+    .card:hover { transform: translateY(-6px); box-shadow: 0 14px 40px rgba(0,0,0,0.45); }
+    .card h3 { color: #1c4532; margin-bottom: 0.8rem; font-size: 1.35rem; }
+    .card p { color: #4a5568; font-size: 0.98rem; }
     .card-btn {
       display: inline-block;
-      margin-top: 1.2rem;
-      padding: 0.5rem 1rem;
+      margin-top: 1.4rem;
+      padding: 0.6rem 1.2rem;
       background: #2f855a;
       color: white;
-      border-radius: 6px;
-      font-size: 0.9rem;
+      border-radius: 8px;
+      font-size: 0.92rem;
       font-weight: 600;
+      text-align: center;
+      transition: background 0.2s;
     }
+    .card:hover .card-btn { background: #276749; }
 
-    /* Modal Popup Box */
+    /* Modal Detailed View */
     .modal-overlay {
       display: none;
       position: fixed;
       top: 0; left: 0;
       width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.75);
-      backdrop-filter: blur(5px);
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(6px);
       z-index: 9999;
       justify-content: center;
       align-items: center;
-      padding: 1.5rem;
+      padding: 1.2rem;
     }
     .modal-box {
       background: #ffffff;
       color: #2d3748;
-      max-width: 520px;
+      max-width: 650px;
       width: 100%;
-      border-radius: 14px;
+      max-height: 90vh;
+      overflow-y: auto;
+      border-radius: 16px;
       padding: 2.2rem;
       position: relative;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+      box-shadow: 0 20px 45px rgba(0,0,0,0.6);
       animation: popIn 0.25s ease-out;
     }
     @keyframes popIn {
-      from { opacity: 0; transform: scale(0.95); }
+      from { opacity: 0; transform: scale(0.96); }
       to { opacity: 1; transform: scale(1); }
     }
     .close-btn {
       position: absolute;
-      top: 12px; right: 16px;
+      top: 14px; right: 18px;
       font-size: 2rem;
       background: none;
       border: none;
@@ -117,13 +124,25 @@
       line-height: 1;
     }
     .close-btn:hover { color: #e53e3e; }
-    .modal-box h3 { color: #22543d; margin-bottom: 0.8rem; font-size: 1.35rem; }
-    .modal-box ul { margin: 1rem 0 1.5rem 1.2rem; color: #4a5568; }
-    .modal-box li { margin-bottom: 0.5rem; }
+    
+    .modal-section { margin-top: 1.4rem; padding-top: 1.2rem; border-top: 1px solid #e2e8f0; }
+    .modal-section h4 { color: #22543d; font-size: 1.15rem; margin-bottom: 0.4rem; display: flex; align-items: center; gap: 0.4rem; }
+    .modal-section p { font-size: 0.95rem; color: #4a5568; margin-bottom: 0.5rem; }
+    
+    /* Media Showcase Box */
+    .media-box {
+      background: #f7fafc;
+      border: 2px dashed #cbd5e0;
+      border-radius: 10px;
+      padding: 1.2rem;
+      text-align: center;
+      margin-top: 0.8rem;
+    }
+    .media-box p { font-size: 0.88rem; color: #718096; margin: 0; }
 
-    /* Contact Box */
+    /* Contact & Booking Box */
     .contact-box { 
-      background: rgba(0, 0, 0, 0.65); 
+      background: rgba(0, 0, 0, 0.7); 
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
       color: white;
@@ -132,10 +151,11 @@
       margin-top: 3.5rem; 
       text-align: center; 
       box-shadow: 0 10px 30px rgba(0,0,0,0.5); 
-      border: 1px solid rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.12);
     }
     .btn { display: inline-block; padding: 0.9rem 2rem; border-radius: 50px; text-decoration: none; font-weight: bold; font-size: 1.05rem; }
     .btn-whatsapp { background-color: #25d366; color: white; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4); }
+    .btn-call { background-color: #3182ce; color: white; box-shadow: 0 4px 15px rgba(49, 130, 206, 0.4); margin-left: 0.8rem; }
 
     /* Footer */
     footer { text-align: center; padding: 2rem 1rem; background: rgba(0, 0, 0, 0.85); color: #a0aec0; font-size: 0.9rem; margin-top: 4rem; border-top: 1px solid rgba(255, 255, 255, 0.1); }
@@ -144,10 +164,10 @@
 </head>
 <body>
 
-  <!-- Topbar -->
+  <!-- Top Bar -->
   <div class="topbar">
-    <div>पोर्टल: <strong>jakharagriculture</strong></div>
-    <div>संपर्क ईमेल: <a href="mailto:info@jakharagriculture.com">info@jakharagriculture.com</a></div>
+    <div>📞 फोन/व्हाट्सएप: <a href="tel:+919996509973">+91 9996509973</a></div>
+    <div>📧 ईमेल: <a href="mailto:jakharagriculture.official@gmail.com">jakharagriculture.official@gmail.com</a></div>
   </div>
 
   <!-- Header -->
@@ -155,7 +175,7 @@
     <div class="nav-container">
       <div>
         <div class="logo">Jakhar <span>Agriculture</span></div>
-        <div class="domain-tag">jakharagriculture.com</div>
+        <div class="domain-tag">आधुनिक खेती एवं लेजर लेवलर सेवाएं</div>
       </div>
     </div>
   </header>
@@ -163,45 +183,53 @@
   <!-- Hero Section -->
   <section class="hero">
     <h1>Jakhar Agriculture में आपका स्वागत है</h1>
-    <p>उन्नत कृषि यंत्र, कल्टीवेशन सेवाएं एवं आधुनिक खेती के संपूर्ण समाधान</p>
+    <p>उन्नत कृषि कार्य, लेजर लैंड लेवलर द्वारा खेत समतलीकरण एवं समृद्ध पैदावार</p>
   </section>
 
   <!-- Services Section -->
   <div class="container">
-    <h2 class="section-title">हमारी मुख्य सेवाएं एवं उत्पाद</h2>
+    <h2 class="section-title">हमारे कार्य एवं मुख्य सेवाएं</h2>
     
     <div class="services-grid">
       <!-- Card 1 -->
-      <div class="card" onclick="openModal('machinery')">
-        <h3>🚜 आधुनिक कृषि उपकरण</h3>
-        <p>उच्च क्षमता वाले ट्रैक्टर, रोटावेटर एवं कल्टीवेटर की उपलब्धता और कुशल फील्ड सर्विस।</p>
-        <span class="card-btn">विवरण देखें &rarr;</span>
+      <div class="card" onclick="openModal('farm')">
+        <div>
+          <h3>🌾 हमारा खेत</h3>
+          <p>हमारे खेत का सम्पूर्ण विवरण — उत्तम मिट्टी, स्वस्थ फसल एवं भूमि की लाइव झलक।</p>
+        </div>
+        <span class="card-btn">खेत का पूरा विवरण देखें &rarr;</span>
       </div>
 
       <!-- Card 2 -->
       <div class="card" onclick="openModal('seeds')">
-        <h3>🌾 उत्तम बीज एवं फसल परामर्श</h3>
-        <p>बेहतर पैदावार के लिए प्रमाणित बीज, उचित उर्वरक एवं मिट्टी की जरूरत अनुसार सटीक सलाह।</p>
-        <span class="card-btn">विवरण देखें &rarr;</span>
+        <div>
+          <h3>🌱 उत्तम बीज एवं फसल परामर्श</h3>
+          <p>बेहतर पैदावार के लिए प्रमाणित बीज, उचित पोषण एवं सही फसल चक्र की जानकारी।</p>
+        </div>
+        <span class="card-btn">परामर्श विवरण देखें &rarr;</span>
       </div>
 
       <!-- Card 3 -->
-      <div class="card" onclick="openModal('repair')">
-        <h3>🛠️ सर्विस एवं स्पेयर पार्ट्स</h3>
-        <p>कृषि यंत्रों की तकनीकी मरम्मत, ओरिजिनल स्पेयर पार्ट्स और समय पर मेंटेनेंस सहायता।</p>
-        <span class="card-btn">विवरण देखें &rarr;</span>
+      <div class="card" onclick="openModal('leveler')">
+        <div>
+          <h3>🚜 लेजर लैंड लेवलर (किराये पर)</h3>
+          <p>कंप्यूटर घोड़ी (लेजर लेवलर) से खेत समतल करवाएं। पानी और डीजल की बचत, अधिक पैदावार।</p>
+        </div>
+        <span class="card-btn">लेवलर विवरण व बुकिंग देखें &rarr;</span>
       </div>
     </div>
 
-    <!-- Contact Section -->
+    <!-- Main Contact Section -->
     <div class="contact-box">
-      <h2 style="color: #48bb78; margin-bottom: 0.5rem;">हमसे संपर्क करें</h2>
-      <p>किसी भी उपकरण, बुकिंग या कृषि सेवा के लिए सीधे संपर्क करें:</p>
+      <h2 style="color: #48bb78; margin-bottom: 0.5rem;">हमसे सीधे संपर्क करें</h2>
+      <p>खेत समतलीकरण (लेजर लेवलर बुकिंग) या किसी भी कृषि सेवा के लिए कॉल या व्हाट्सएप करें:</p>
       
-      <div style="margin-top: 1.2rem;">
-        <!-- Apna WhatsApp number 91XXXXXXXXXX ki jagah dalein -->
-        <a href="https://wa.me/919999999999?text=Namaste,%20mujhe%20jakharagriculture%20se%20jaankari%20chahiye." target="_blank" class="btn btn-whatsapp">
+      <div style="margin-top: 1.5rem; display: flex; justify-content: center; flex-wrap: wrap; gap: 0.8rem;">
+        <a href="https://wa.me/919996509973?text=Namaste,%20mujhe%20Jakhar%20Agriculture%20se%20jaankari%20aur%20booking%20karwani%20hai." target="_blank" class="btn btn-whatsapp">
           💬 WhatsApp पर बात करें
+        </a>
+        <a href="tel:+919996509973" class="btn btn-call">
+          📞 कॉल करें: 9996509973
         </a>
       </div>
     </div>
@@ -212,7 +240,7 @@
     <p>&copy; 2026 <strong>Jakhar Agriculture</strong>. सर्वाधिकार सुरक्षित।</p>
   </footer>
 
-  <!-- Modal Screen -->
+  <!-- Modal Pop-up Box -->
   <div id="infoModal" class="modal-overlay" onclick="closeModalOnOutsideClick(event)">
     <div class="modal-box">
       <button class="close-btn" onclick="closeModal()">&times;</button>
@@ -220,56 +248,109 @@
     </div>
   </div>
 
-  <!-- Script for Popup -->
+  <!-- Script for Handling Dynamic Content Inside Modal -->
   <script>
-    const serviceDetails = {
-      machinery: {
-        title: "🚜 आधुनिक कृषि उपकरण व मशीनरी",
-        desc: "हमारे पास उन्नत और आधुनिक कृषि मशीनें उचित दर पर उपलब्ध हैं:",
-        points: [
-          "उच्च क्षमता वाले ट्रैक्टर एवं कल्टीवेशन सेवाएं",
-          "रोटावेटर, डिस्क हैरो और लेजर लैंड लेवलर",
-          "समय पर फील्ड सर्विस और अनुभवी ऑपरेटर सुविधा"
-        ],
-        msg: "Tractor%20aur%20Machinery%20ki%20booking%20ki%20jaankari%20chahiye"
+    const detailsData = {
+      farm: {
+        heading: "🌾 हमारा खेत (संपूर्ण विवरण)",
+        html: `
+          <div class="modal-section" style="border-top:none; margin-top:0;">
+            <h4>📸 1. Land Snap (खेत की झलक व वीडियो)</h4>
+            <p>खेत की ताज़ा स्थिति, कल्टीवेशन और प्राकृतिक वातावरण के दृश्य।</p>
+            <div class="media-box">
+              <strong>🎬 वीडियो व फोटो सेक्शन</strong>
+              <p>यहां आप अपने खेत की लाइव वीडियो और फोटो लगा सकते हैं।</p>
+              <p style="margin-top:5px; font-size:0.8rem; color:#4a5568;">(GitHub पर वीडियो या यूट्यूब लिंक जोड़कर आसानी से लाइव दिखाया जा सकता है)</p>
+            </div>
+          </div>
+
+          <div class="modal-section">
+            <h4>🌱 2. बढ़िया मिट्टी</h4>
+            <p>हमारे खेत की मिट्टी उपजाऊ, जैविक रूप से समृद्ध और उचित नमी धारण करने वाली है। संतुलित खाद और जैविक पोषण से मिट्टी का स्वास्थ्य उत्तम रखा जाता है।</p>
+          </div>
+
+          <div class="modal-section">
+            <h4>🌾 3. हमारी फसल</h4>
+            <p>उत्कृष्ट पैदावार, उच्च गुणवत्ता वाले प्रमाणित बीज और समय पर सही सिंचाई के साथ लहलहाती फसलें तैयार की जाती हैं।</p>
+          </div>
+
+          <div style="margin-top:1.8rem; text-align:center;">
+            <a href="https://wa.me/919996509973?text=Namaste,%20mujhe%20aapke%20khet%20aur%20fasal%20ke%20bare%20me%20baat%20karni%20hai." target="_blank" class="btn btn-whatsapp" style="width:100%;">
+              💬 खेत के बारे में WhatsApp पर पूछें
+            </a>
+          </div>
+        `
       },
       seeds: {
-        title: "🌾 उत्तम बीज एवं फसल समाधान",
-        desc: "फसल की पैदावार बढ़ाने के लिए प्रमाणित सामग्री एवं विशेषज्ञ सलाह:",
-        points: [
-          "उच्च गुणवत्ता वाले प्रमाणित बीज",
-          "संतुलित खाद, स्प्रे एवं कीटनाशक सुरक्षा",
-          "मिट्टी की प्रकृति अनुसार उचित फसल मार्गदर्शन"
-        ],
-        msg: "Beej%20aur%20Fasal%20se%20sambandhit%20jaankari%20chahiye"
+        heading: "🌱 उत्तम बीज एवं फसल परामर्श",
+        html: `
+          <div class="modal-section" style="border-top:none; margin-top:0;">
+            <h4>🌾 प्रमाणित बीजों का चयन</h4>
+            <p>मौसम और मिट्टी के अनुकूल प्रमाणित और अधिक उपज देने वाली किस्मों की जानकारी।</p>
+          </div>
+
+          <div class="modal-section">
+            <h4>🧪 संतुलित उर्वरक एवं स्प्रे सुरक्षा</h4>
+            <p>फसल को कीटों और रोगों से बचाने के लिए सही समय पर सही दवा और खाद का मार्गदर्शन।</p>
+          </div>
+
+          <div class="modal-section">
+            <h4>💧 जल प्रबंधन व सिंचाई</h4>
+            <p>कम पानी में उत्तम पैदावार के लिए आधुनिक सिंचाई तकनीक और सुझाव।</p>
+          </div>
+
+          <div style="margin-top:1.8rem; text-align:center;">
+            <a href="https://wa.me/919996509973?text=Namaste,%20mujhe%20beej%20aur%20fasal%20paramarsh%20chahiye." target="_blank" class="btn btn-whatsapp" style="width:100%;">
+              💬 फसल परामर्श के लिए WhatsApp करें
+            </a>
+          </div>
+        `
       },
-      repair: {
-        title: "🛠️ रिपेयरिंग एवं जेन्युइन स्पेयर पार्ट्स",
-        desc: "कृषि यंत्रों की त्वरित मरम्मत एवं देखभाल:",
-        points: [
-          "अनुभवी मैकेनिक द्वारा ऑन-साइट व वर्कशॉप मरम्मत",
-          "मूल एवं टिकाऊ स्पेयर पार्ट्स",
-          "सीजन में तुरंत इमरजेंसी रिपेयरिंग सहायता"
-        ],
-        msg: "Machinery%20repair%20aur%20parts%20ki%20jaankari%20chahiye"
+      leveler: {
+        heading: "🚜 लेजर लैंड लेवलर (किराये पर बुकिंग)",
+        html: `
+          <div class="modal-section" style="border-top:none; margin-top:0;">
+            <h4>📏 खेत समतलीकरण के बड़े फायदे</h4>
+            <p>कंप्यूटर लेजर लैंड लेवलर द्वारा खेत को पूरी तरह समतल (Level) किया जाता है:</p>
+            <ul style="margin: 0.5rem 0 0.8rem 1.2rem; color:#4a5568; font-size:0.95rem;">
+              <li><strong>पानी की 30-40% तक बचत:</strong> पानी खेत के हर कोने में एक समान पहुँचता है।</li>
+              <li><strong>डीजल व समय की बचत:</strong> सिंचाई में लगने वाला समय कम होता है।</li>
+              <li><strong>अधिक पैदावार:</strong> फसल में न तो कहीं जलभराव होता है और न ही कोई कोना सूखा रहता है।</li>
+            </ul>
+          </div>
+
+          <div class="modal-section">
+            <h4>🎬 कार्य के वीडियो एवं फोटो</h4>
+            <div class="media-box">
+              <strong>🚜 लेजर लेवलर इन एक्शन</strong>
+              <p>खेत समतल करते हुए मशीन की वीडियो व लाइव फोटो यहां दिखेगी।</p>
+            </div>
+          </div>
+
+          <div class="modal-section">
+            <h4>📅 अपने खेत के लिए बुकिंग करवाएं</h4>
+            <p>यदि आप अपने खेत में लेजर लैंड लेवलर लगवाना चाहते हैं, तो तारीख और रकबा (एकड़) बताकर तुरंत बुकिंग करवाएं:</p>
+            
+            <div style="display:flex; flex-direction:column; gap:0.6rem; margin-top:1rem;">
+              <a href="https://wa.me/919996509973?text=Namaste,%20mujhe%20apne%20khet%20me%20Laser%20Land%20Leveler%20lagwana%20hai,%20booking%20ki%20jaankari%20dein." target="_blank" class="btn btn-whatsapp" style="text-align:center;">
+                💬 लेजर लेवलर बुकिंग के लिए WhatsApp करें
+              </a>
+              <a href="tel:+919996509973" class="btn btn-call" style="text-align:center; margin-left:0;">
+                📞 सीधे कॉल करके तारीख बुक करें: 9996509973
+              </a>
+            </div>
+          </div>
+        `
       }
     };
 
-    function openModal(serviceKey) {
-      const data = serviceDetails[serviceKey];
+    function openModal(key) {
+      const item = detailsData[key];
       const content = document.getElementById("modalContent");
-      
-      let pointsHtml = data.points.map(pt => `<li>${pt}</li>`).join('');
-      
       content.innerHTML = `
-        <h3>${data.title}</h3>
-        <p>${data.desc}</p>
-        <ul>${pointsHtml}</ul>
-        <a href="https://wa.me/919996509973?text=Namaste,%20${data.msg}" target="_blank" class="btn btn-whatsapp" style="display:block; text-align:center; margin-top:1.5rem;">
-          💬 WhatsApp पर पूछें
-        </a>
+        <h2 style="color:#1c4532; margin-bottom:0.5rem; font-size:1.5rem;">${item.heading}</h2>
+        ${item.html}
       `;
-      
       document.getElementById("infoModal").style.display = "flex";
     }
 
@@ -285,4 +366,4 @@
   </script>
 
 </body>
-</html>
+</html>   
